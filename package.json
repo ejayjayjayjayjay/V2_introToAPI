@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ejayjayjayjayjay/V2_introToApi/issues"
   },
-  "homepage": "https://github.com/ejayjayjayjayjay/V2_introToApi#readme"
+  "homepage": "https://github.com/ejayjayjayjayjay/V2_introToApi#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
