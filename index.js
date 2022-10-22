@@ -43,6 +43,14 @@ app.get('/', (req, res) => {
             // console.log(data);
             const weatherData = JSON.parse(data);
             console.log(weatherData);
+
+            const object = {
+              firstName: 'Josell',
+              lastName: 'Vibar',
+              favoriteAnime: 'HunterxHunter',
+              specialSkills: 'com skills'
+          }
+          console.log(JSON.stringify(object));
         });
     });
     // console.log('statusCode:', res.statusCode);
