@@ -57,8 +57,19 @@ app.get('/', (req, res) => {
           console.log(temp);
 
           const printDesc = weatherData.weather[0].description;
-          res.send(`The Temperature in Manila is ${temp} deg celcius`);
-          console.log(printDesc);
+          // res.write (`<h3>The temperature in Manila is  ${temp} deg celcius</h3>`)
+     
+          // res.write (`<h1>The weather is currently ${printDesc} </h1>`)
+          res.send ("<h1>The weather is currently " + printDesc + "</h1>");
+          res.write ("<h3>The temperature in Manila is "  +temp+ "deg celcius</h3>");
+          res.end ()
+      
+          // res. ();
+
+          // res.end ()
+          // res.send(`The Temperature in Manila is ${temp} deg celcius`);
+          // console.log(printDesc);
+
         });
     });
     // res.send(`This is going to cracsh our server`)
