@@ -40,7 +40,9 @@ app.get('/', (req, res) => {
         // console.log(response);
         console.log(response.statusCode);
         response.on('data',(data) => {
-            console.log(data);
+            // console.log(data);
+            const weatherData = JSON.parse(data);
+            console.log(weatherData);
         });
     });
     // console.log('statusCode:', res.statusCode);
