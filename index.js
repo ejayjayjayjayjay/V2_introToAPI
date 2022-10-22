@@ -35,7 +35,7 @@ const https = require('node:https');
 const port = 3000;
 
 app.get('/', (req, res) => {
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=manila&units=metric&appid=9f7e9e0b314b24c7c6eaf82ebc88862a';
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q=cavite&units=metric&appid=9f7e9e0b314b24c7c6eaf82ebc88862a';
     https.get(url, (response) => {
         // console.log(response);
         // console.log(response.statusCode);
