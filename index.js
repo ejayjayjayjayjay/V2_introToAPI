@@ -57,17 +57,11 @@ app.get('/', (req, res) => {
           console.log(temp);
 
           const printDesc = weatherData.weather[0].description;
+          res.send(`The Temperature in Manila is ${temp} deg celcius`);
           console.log(printDesc);
-
         });
-
-       
-
     });
-    // console.log('statusCode:', res.statusCode);
-    // console.log('headers:', res.headers);
-    res.send('Server is now running');
-
+    // res.send(`This is going to cracsh our server`)
 })
 
 app.listen(port, () => {
