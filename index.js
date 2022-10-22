@@ -41,6 +41,9 @@ app.get('/', (req, res) => {
           const weatherData = JSON.parse(data);
           
           const icon = weatherData.weather[0].icon;
+          console.log(icon);
+
+          const imageUrl = 'http://openweathermap.org/img/wn/10d@2x.png';
 
           const humidity = weatherData.main.humidity;
           console.log(humidity);
@@ -48,11 +51,12 @@ app.get('/', (req, res) => {
           console.log(temp);
 
           const printDesc = weatherData.weather[0].description;
-
+          
+          res.write (`<img src="${imageUrl}">`);
+          // res.write('<img src=" '+ imageUrl +'">');
           res.write (`<h1>The weather is currently ${printDesc} </h1>`);
           res.write (`<h3>The temperature in Cavite is ${temp} deg celcius</h3>`);
           res.send ()
-          
         });
     });
     // res.send(`This is going to cracsh our server`)
