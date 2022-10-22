@@ -38,20 +38,31 @@ app.get('/', (req, res) => {
     const url = 'https://api.openweathermap.org/data/2.5/weather?q=manila&units=metric&appid=9f7e9e0b314b24c7c6eaf82ebc88862a';
     https.get(url, (response) => {
         // console.log(response);
-        console.log(response.statusCode);
+        // console.log(response.statusCode);
         response.on('data',(data) => {
             // console.log(data);
             const weatherData = JSON.parse(data);
-            console.log(weatherData);
+            // console.log(weatherData);
 
-            const object = {
+           /*  const object = {
               firstName: 'Josell',
               lastName: 'Vibar',
               favoriteAnime: 'HunterxHunter',
               specialSkills: 'com skills'
           }
-          console.log(JSON.stringify(object));
+          console.log(JSON.stringify(object));*/
+          const humidity = weatherData.main.humidity;
+          console.log(humidity);
+          const temp = weatherData.main.temp;
+          console.log(temp);
+
+          const printDesc = weatherData.weather[0].description;
+          console.log(printDesc);
+
         });
+
+       
+
     });
     // console.log('statusCode:', res.statusCode);
     // console.log('headers:', res.headers);
