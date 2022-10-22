@@ -37,39 +37,22 @@ const port = 3000;
 app.get('/', (req, res) => {
     const url = 'https://api.openweathermap.org/data/2.5/weather?q=cavite&units=metric&appid=9f7e9e0b314b24c7c6eaf82ebc88862a';
     https.get(url, (response) => {
-        // console.log(response);
-        // console.log(response.statusCode);
-        response.on('data',(data) => {
-            // console.log(data);
-            const weatherData = JSON.parse(data);
-            // console.log(weatherData);
+          response.on('data',(data) => {
+          const weatherData = JSON.parse(data);
+          
+          const icon = weatherData.weather[0].icon;
 
-           /*  const object = {
-              firstName: 'Josell',
-              lastName: 'Vibar',
-              favoriteAnime: 'HunterxHunter',
-              specialSkills: 'com skills'
-          }
-          console.log(JSON.stringify(object));*/
           const humidity = weatherData.main.humidity;
           console.log(humidity);
           const temp = weatherData.main.temp;
           console.log(temp);
 
           const printDesc = weatherData.weather[0].description;
-          // res.write (`<h3>The temperature in Manila is  ${temp} deg celcius</h3>`)
-     
-          // res.write (`<h1>The weather is currently ${printDesc} </h1>`)
+
           res.write (`<h1>The weather is currently ${printDesc} </h1>`);
-          res.write (`<h3>The temperature in Manila is ${temp} deg celcius</h3>`);
+          res.write (`<h3>The temperature in Cavite is ${temp} deg celcius</h3>`);
           res.send ()
-      
-          // res. ();
-
-          // res.end ()
-          // res.send(`The Temperature in Manila is ${temp} deg celcius`);
-          // console.log(printDesc);
-
+          
         });
     });
     // res.send(`This is going to cracsh our server`)
