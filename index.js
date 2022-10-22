@@ -60,9 +60,9 @@ app.get('/', (req, res) => {
           // res.write (`<h3>The temperature in Manila is  ${temp} deg celcius</h3>`)
      
           // res.write (`<h1>The weather is currently ${printDesc} </h1>`)
-          res.send ("<h1>The weather is currently " + printDesc + "</h1>");
-          res.write ("<h3>The temperature in Manila is "  +temp+ "deg celcius</h3>");
-          res.end ()
+          res.write (`<h1>The weather is currently ${printDesc} </h1>`);
+          res.write (`<h3>The temperature in Manila is ${temp} deg celcius</h3>`);
+          res.send ()
       
           // res. ();
 
